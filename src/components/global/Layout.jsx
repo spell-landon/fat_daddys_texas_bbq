@@ -10,7 +10,7 @@ export const Layout = ({ children }) => {
       <Header />
 
       {/* Main Content */}
-      <main className='w-full max-w-7xl mx-auto p-4'>{children}</main>
+      <main className='w-full'>{children}</main>
 
       {/* Footer */}
       <footer className='mt-auto'>
