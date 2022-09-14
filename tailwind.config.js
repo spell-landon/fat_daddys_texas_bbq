@@ -16,6 +16,10 @@ module.exports = {
         myOrangeButtonHover: 'rgb(148, 112, 75)',
         footerDisclaimer: 'rgb(107, 104, 107)',
       },
+      fontFamily: {
+        heebo: ['Heebo', 'sans-serif'],
+        lobster: ['Lobster', 'cursive'],
+      },
     },
   },
   plugins: [],

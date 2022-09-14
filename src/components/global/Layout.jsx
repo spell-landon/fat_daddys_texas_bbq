@@ -5,7 +5,7 @@ import { FooterDisclaimer } from './FooterDisclaimer';
 
 export const Layout = ({ children }) => {
   return (
-    <div className='flex flex-col min-h-screen max-w-screen bg-myBlack text-myWhite'>
+    <div className='flex flex-col min-h-screen max-w-screen bg-myBlack text-myWhite font-heebo'>
       {/* Navigation */}
       <Header />
 
