@@ -9,6 +9,8 @@ export const Home = () => {
     <div>
       <Hero />
       <LandingDetails />
+      {/* //TODO Fix Image Carousel */}
+      {/*//? Maybe need to use another library? */}
       <ImageCarousel />
     </div>
   );
