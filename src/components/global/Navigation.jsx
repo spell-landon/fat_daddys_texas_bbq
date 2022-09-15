@@ -12,11 +12,11 @@ import { classNames } from '../../lib/classNames';
 // HeadlessUI
 import { Popover, Transition } from '@headlessui/react';
 
-export const Header = () => {
+export const Navigation = () => {
   const { pathname } = useLocation();
 
   return (
-    <header className='bg-myBlack text-myWhite w-full p-6 sticky top-0 z-10'>
+    <header className='bg-myBlack text-myWhite w-full p-6 sticky top-0 z-[1000]'>
       <div className='w-full max-w-7xl mx-auto flex justify-between items-center'>
         <Link
           to={SHOP_INFO.path}
