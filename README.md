@@ -45,3 +45,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 1. Go through each page and double-check that everything is included in the `Hygraph CMS` schemas
 2. Set up image paths to accept a url `string` or an `image` object. If the `imageString` is used in `Hygraph`, prioritize `imageString` over the `image` object.
 3. Implement the `Framer` image carousel on the main `Home` page. 
+4. Update the `index.html` with relevant browser tab data. (i.e., Name, icons, etc.)
