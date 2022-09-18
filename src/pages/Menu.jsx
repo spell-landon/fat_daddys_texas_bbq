@@ -53,7 +53,7 @@ export const Menu = () => {
         {data.sections.map((item) => {
           return (
             <div className=''>
-              <div className='sticky top-[84px] bg-myBlack pt-8'>
+              <div className='sticky top-[68px] bg-myBlack pt-8'>
                 <h4 className='font-medium text-3xl text-center'>
                   {item.title}
                 </h4>

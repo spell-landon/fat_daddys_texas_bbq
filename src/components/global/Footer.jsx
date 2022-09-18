@@ -69,7 +69,9 @@ export const Footer = () => {
           return <span key={`hourDetails-${idx}`}>{hour}</span>;
         })}
       </div>
-      <span className='text-stone-600 font-light'>{asteriskInfo}</span>
+      <span className='text-stone-600 font-light px-4 text-center'>
+        {asteriskInfo}
+      </span>
       <div className='flex gap-4'>
         {SOCIAL_MEDIA.map(({ path, icon, name }, index) => {
           console.log(path);
