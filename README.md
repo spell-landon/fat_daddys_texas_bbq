@@ -3,9 +3,9 @@
 <img width="1279" alt="Screen Shot 2022-09-17 at 9 53 17 PM" src="https://user-images.githubusercontent.com/56459233/190883570-3768cb1f-6c65-479c-b049-b8aaea4ee460.png">
 
 ## Details
-This project initially started as something to practice coding back in March of 2021. My cousin said she and her husband were going to open a restaurant called `Fat Daddy's Texas BBQ` so I thought `Why not attempt to build them a website?`. At that time, with beginners knowledge, I created everything with  vanilla HTML, CSS, JS. After attending GA, I have learned a lot of new techniques that really cleaned up my code. I found this project a few days ago and decided it needed an overhaul. 
+> This project initially started as something to practice coding back in March of 2021. My cousin said she and her husband were going to open a restaurant called `Fat Daddy's Texas BBQ` so I thought `Why not attempt to build them a website?`. At that time, with beginners knowledge, I created everything with  vanilla HTML, CSS, JS. After attending GA, I have learned a lot of new techniques that really cleaned up my code. I found this project a few days ago and decided it needed an overhaul. 
 
-I created this new version using React, Tailwind, and Hygraph CMS for the data management. 
+I created this new version using `React`, `Tailwind`, and `Hygraph CMS` for the data management. 
 
 ## Hygraph Content API Endpoint:
 
@@ -40,3 +40,7 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+# Todo: 
+1. Go through each page and double-check that everything is included in the `Hygraph CMS` schemas
+2. Set up image paths to accept a url `string` or an `image` object. If the `imageString` is used in `Hygraph`, prioritize `imageString` over the `image` object.
