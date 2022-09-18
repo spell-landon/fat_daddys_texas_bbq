@@ -46,7 +46,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 2. Set up image paths to accept a url `string` or an `image` object. If the `imageString` is used in `Hygraph`, prioritize `imageString` over the `image` object.
 3. Implement the `Framer` image carousel on the main `Home` page instead of the current image carousel.
 4. Update the `index.html` with relevant browser tab data. (i.e., Name, icons, etc.)
-5. ~~Center the Navigation Menu in the `Header` and push out the Company Name and Social Icons. ~~
+5. ~~Center the Navigation Menu in the `Header` and push out the Company Name and Social Icons.
 6. Fix the links on the social icons to navigate externally. 
 7. Fix `Home` page on mobile. Where did that big empty gap come from...?
 8. ~~Make the section titles on the food menu sticky beneath the nav menu when scrolling on mobile.~~
