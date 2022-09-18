@@ -47,3 +47,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 3. Implement the `Framer` image carousel on the main `Home` page. 
 4. Update the `index.html` with relevant browser tab data. (i.e., Name, icons, etc.)
 5. Center the Navigation Menu in the `Header` and push out the Company Name and Social Icons. 
+6. Fix the links on the social icons to navigate externally. 
