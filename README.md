@@ -1,5 +1,5 @@
 # Fat Daddy's Texas BBQ
-### [View the active demo site here](poetic-tulumba-767330.netlify.app)
+### [View the active demo site here](https://fatdaddystexasbbq.netlify.app/)
 <img width="1279" alt="Screen Shot 2022-09-17 at 9 53 17 PM" src="https://user-images.githubusercontent.com/56459233/190883570-3768cb1f-6c65-479c-b049-b8aaea4ee460.png">
 
 ## Details
