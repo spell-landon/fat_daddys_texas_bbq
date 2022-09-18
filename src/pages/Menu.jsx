@@ -52,9 +52,13 @@ export const Menu = () => {
       <div>
         {data.sections.map((item) => {
           return (
-            <div className='mt-8'>
-              <h4 className='font-medium text-3xl text-center'>{item.title}</h4>
-              <div className='bg-myOrangeText w-full h-[0.5px] my-10'></div>
+            <div className=''>
+              <div className='sticky top-[84px] bg-myBlack pt-8'>
+                <h4 className='font-medium text-3xl text-center'>
+                  {item.title}
+                </h4>
+                <div className='bg-myOrangeText w-full h-[0.5px] my-10'></div>
+              </div>
 
               {item.description && (
                 <p className='w-full sm:w-3/4 max-w-3xl text-center mx-auto mb-8'>
