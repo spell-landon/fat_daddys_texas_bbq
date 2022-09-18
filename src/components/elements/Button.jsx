@@ -5,11 +5,11 @@ export const Button = ({ text, path }) => {
   return path ? (
     <Link
       to={path}
-      className='bg-myOrangeButton hover:bg-myOrangeButtonHover py-3 px-6 rounded text-myWhite text-xl'>
+      className='bg-myOrangeButton hover:bg-myOrangeButtonHover py-3 px-6 rounded text-myWhite text-xl text-center'>
       {text}
     </Link>
   ) : (
-    <button className='bg-myOrangeButton hover:bg-myOrangeButtonHover py-3 px-6 rounded text-myWhite text-xl'>
+    <button className='bg-myOrangeButton hover:bg-myOrangeButtonHover py-3 px-6 rounded text-myWhite text-xl text-center'>
       {text}
     </button>
   );

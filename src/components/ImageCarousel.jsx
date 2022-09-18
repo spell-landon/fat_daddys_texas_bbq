@@ -23,7 +23,7 @@ export const ImageCarousel = () => {
       navigation={false}
       modules={[EffectFade, Autoplay]}
       effect='fade'
-      className='w-full h-full max-h-[566px]'>
+      className='w-full h-[566px]'>
       {images.map((image, idx) => {
         return (
           <SwiperSlide key={`image-${idx}`}>

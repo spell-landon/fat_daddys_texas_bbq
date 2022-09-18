@@ -44,6 +44,7 @@ export const About = () => {
         src={data.imageString ? data.imageString : data.image.url}
         alt='Family portrait'
         className='w-full max-w-4xl mx-auto my-10 object-cover'
+        loading='lazy'
       />
       <div
         className='w-full max-w-4xl mx-auto space-y-4'
