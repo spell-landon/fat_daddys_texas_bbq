@@ -72,13 +72,14 @@ export const Footer = () => {
       <span className='text-stone-600 font-light'>{asteriskInfo}</span>
       <div className='flex gap-4'>
         {SOCIAL_MEDIA.map(({ path, icon, name }, index) => {
+          console.log(path);
           return (
-            <Link
+            <a
               key={`${name}-${index}`}
-              to={path}
+              href={path}
               className='text-gray-300 hover:text-myOrangeTextHover transition-all'>
               {icon}
-            </Link>
+            </a>
           );
         })}
       </div>

@@ -80,12 +80,12 @@ export const Navigation = () => {
         <div className='hidden md:flex gap-4'>
           {SOCIAL_MEDIA.map(({ path, icon, name }, index) => {
             return (
-              <Link
+              <a
                 key={`${name}-${index}`}
-                to={path}
+                href={path}
                 className='text-gray-300 hover:text-gray-100 transition-all'>
                 {icon}
-              </Link>
+              </a>
             );
           })}
         </div>
