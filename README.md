@@ -49,4 +49,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 5. Center the Navigation Menu in the `Header` and push out the Company Name and Social Icons. 
 6. Fix the links on the social icons to navigate externally. 
 7. Fix `Home` page on mobile. Where did that big empty gap come from...?
-8. Make the section titles on the food menu sticky beneath the nav menu when scrolling on mobile.
+8. ~~Make the section titles on the food menu sticky beneath the nav menu when scrolling on mobile.~~
