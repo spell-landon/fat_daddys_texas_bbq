@@ -8,6 +8,7 @@ export const LandingDetails = () => {
       {LANDING_DETAILS.map((item, idx) => {
         return (
           <span
+            key={`text-${idx}`}
             className={classNames(
               idx === 0 ? `text-2xl font-medium` : `text-xl font-normal`
             )}>

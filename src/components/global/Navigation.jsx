@@ -1,39 +1,77 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 // Icons
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import MenuOpenRoundedIcon from '@mui/icons-material/MenuOpenRounded';
 // Constants
-import { NAVIGATION_MENU } from '../../lib/navigation_menu';
-import { SHOP_INFO } from '../../lib/shop_info';
 import { SOCIAL_MEDIA } from '../../lib/social_media';
 // Functions
 import { classNames } from '../../lib/classNames';
 // HeadlessUI
 import { Popover, Transition } from '@headlessui/react';
+// GraphQL
+import { request } from 'graphql-request';
 
 export const Navigation = () => {
   const { pathname } = useLocation();
+
+  const [shopData, setShopData] = useState(null);
+  const [navigationData, setNavigationData] = useState(null);
+
+  useEffect(() => {
+    const fetchShop = async () => {
+      const { shop, navigationMenu } = await request(
+        'https://api-us-east-1.hygraph.com/v2/cl83s5iwu1bgg01ug5cjx6s6d/master',
+        `
+        {
+          shop(where: {id: "cl86nnr0nsu2q0djy2m9cl54b"}) {
+            companyName
+            pagePath
+          }
+          navigationMenu(where: {id: "cl86p6qp7t4m50djytckwar02"}) {
+            navigationMenuItems(first: 10) {
+              title
+              pagePath
+            }
+          } 
+        }
+        `
+      );
+
+      setShopData(shop);
+      setNavigationData(navigationMenu);
+    };
+
+    fetchShop();
+  }, []);
+
+  if (!shopData || !navigationData) {
+    return null;
+  }
+
+  const { navigationMenuItems } = navigationData;
 
   return (
     <header className='bg-myBlack text-myWhite w-full p-6 sticky top-0 z-[1000]'>
       <div className='w-full max-w-7xl mx-auto flex justify-between items-center'>
         <Link
-          to={SHOP_INFO.path}
+          to={shopData.pagePath}
           className='font-lobster text-3xl font-medium hover:text-myOrangeTextHover transition-all'>
-          {SHOP_INFO.shopName}
+          {shopData.companyName}
         </Link>
         {/* Desktop - Navigation */}
         <ul className='hidden md:flex gap-8'>
-          {NAVIGATION_MENU.map(({ title, link }, index) => {
+          {navigationMenuItems.map(({ title, pagePath }, index) => {
             return (
               <li
                 key={`${title}-${index}`}
                 className={classNames(
                   `hover:text-myOrangeTextHover transition-all`,
-                  pathname === link ? 'text-myOrangeText' : 'text-text-gray-300'
+                  pathname === pagePath
+                    ? 'text-myOrangeText'
+                    : 'text-text-gray-300'
                 )}>
-                <Link to={link}>{title}</Link>
+                <Link to={pagePath}>{title}</Link>
               </li>
             );
           })}
@@ -74,28 +112,30 @@ export const Navigation = () => {
                   <div className='overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5'>
                     <div className='relative gap-4 bg-myWhite'>
                       <ul className='flex flex-col'>
-                        {NAVIGATION_MENU.map(({ title, link }, index) => {
-                          return (
-                            <li
-                              key={`${title}-${index}`}
-                              className={classNames(
-                                `hover:text-myBlack hover:bg-myOrangeText/20 transition-all`,
-                                pathname === link
-                                  ? 'text-myWhite bg-myOrangeText'
-                                  : 'text-myBlackLight',
-                                title === 'Contact'
-                                  ? 'bg-gray-200 text-myWhite'
-                                  : ''
-                              )}>
-                              <Link
-                                to={link}
-                                className='flex p-4 py-6'
-                                onClick={() => close()}>
-                                {title}
-                              </Link>
-                            </li>
-                          );
-                        })}
+                        {navigationMenuItems.map(
+                          ({ title, pagePath }, index) => {
+                            return (
+                              <li
+                                key={`${title}-${index}`}
+                                className={classNames(
+                                  `hover:text-myBlack hover:bg-myOrangeText/20 transition-all`,
+                                  pathname === pagePath
+                                    ? 'text-myWhite bg-myOrangeText'
+                                    : 'text-myBlackLight',
+                                  title === 'Contact'
+                                    ? 'bg-gray-200 text-myWhite'
+                                    : ''
+                                )}>
+                                <Link
+                                  to={pagePath}
+                                  className='flex p-4 py-6'
+                                  onClick={() => close()}>
+                                  {title}
+                                </Link>
+                              </li>
+                            );
+                          }
+                        )}
                       </ul>
                     </div>
                   </div>

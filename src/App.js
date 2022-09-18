@@ -1,4 +1,6 @@
+import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Fallback } from './components/elements/Fallback';
 import { Layout } from './components/global/Layout';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
@@ -11,7 +13,16 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/menu' element={<Menu />} />
-        <Route path='/about' element={<About />} />
+
+        <Route
+          path='/about'
+          element={
+            <Suspense fallback={<Fallback />}>
+              <About />
+            </Suspense>
+          }
+        />
+
         <Route path='/contact' element={<Contact />} />
       </Routes>
     </Layout>
